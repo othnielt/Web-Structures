@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+        <title> question 7 </title>
+        <script>
+            function total() {
+
+                // variables 
+                let productPrices = [2.98, 4.50, 9.98, 4.49, 6.87]; // price of each product
+                let productQuantities = [0, 0, 0, 0, 0]; // intialize productQuantities to 0 
+                let totalSales = [0, 0, 0, 0, 0]; // intialize  totalSales to 0 
+                let productNumber, quantitySold;
+
+
+                while (true) {
+                    productNumber = parseInt(prompt("Enter product number from  (1 to 5) or 0 to stop:"));
+
+                    if (productNumber === 0) {
+                        break;
+                    }
+
+                    quantitySold = parseInt(prompt("Enter quantity sold:"));
+
+                    switch (productNumber) {
+                        case 1:
+                            productQuantities[0] += quantitySold;
+                            break;
+                        case 2:
+                            productQuantities[1] += quantitySold;
+                            break;
+                        case 3:
+                            productQuantities[2] += quantitySold;
+                            break;
+                        case 4:
+                            productQuantities[3] += quantitySold;
+                            break;
+                        case 5:
+                            productQuantities[4] += quantitySold;
+                            break;
+                        default:
+                            alert("Invalid product number!");
+                    }
+                }
+
+                for (let i = 0; i < 5; i++) {
+                    totalSales[i] = productPrices[i] * productQuantities[i];
+                }
+
+                let table = "<table border='1'><tr><th>Product</th><th>Retail Price</th><th>Quantity Sold</th><th>Total Sales</th></tr>";
+                for (let i = 0; i < 5; i++) {
+                    table += "<tr><td>" + (i + 1) + "</td><td>" + productPrices[i] + "</td><td>" + productQuantities[i] + "</td><td>" + totalSales[i].toFixed(2) + "</td></tr>";
+                }
+                table += "</table>";
+                document.write(table);
+
+            }
+        </script>
+    </head>
+
+    <body onload="total()">
+    </body>
+
+</html>

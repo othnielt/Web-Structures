@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="A4_Q7_Tiendrebeogo_300084968.xsl"?>
+<product>
+    <name>Grandma White's Cookies</name>
+    <serving_size>1 package</serving_size>
+    <nutrients>
+        <calories>260</calories>
+        <fat_calories>100</fat_calories>
+        <fat>
+            <total>11g</total>
+            <saturated>2g</saturated>
+        </fat>
+        <cholesterol>5mg</cholesterol>
+        <sodium>210mg</sodium>
+        <carbohydrates>
+            <total>36g</total>
+            <fiber>2g</fiber>
+            <sugars>15g</sugars>
+        </carbohydrates>
+        <protein>5g</protein>
+    </nutrients>
+</product>
+
+
+
+
+
+
+
+

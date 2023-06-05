@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question3</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Guess the Number Game</h1>
+	<p>Guess a number between 1 and 1000:</p>
+	<input type="number" id="guessInput">
+	<button onclick="checkGuess()">Submit Guess</button>
+	<p id="guessResult"></p>
+
+	<script>
+		let randomNumber = Math.floor(Math.random() * 1000) + 1;
+		let numberOfGuesses = 0;
+
+		function checkGuess() {
+			const guessInput = document.getElementById("guessInput");
+			const guessResult = document.getElementById("guessResult");
+
+			let guess = parseInt(guessInput.value);
+			if (isNaN(guess) || guess < 1 || guess > 1000) {
+				guessResult.innerHTML = "Wrong input! You should enter a number between 1 and 1000.";
+				return;
+			}
+
+			numberOfGuesses++;
+
+			if (guess === randomNumber) {
+				if (numberOfGuesses <= 10) {
+					guessResult.innerHTML = "Either you know the secret or you got lucky!";
+				} else {
+					guessResult.innerHTML = "Ahah! You know the secret!";
+				}
+			} else if (guess < randomNumber) {
+				guessResult.innerHTML = "Too low. Try again.";
+			} else {
+				guessResult.innerHTML = "Too high. Try again.";
+			}
+
+			if (numberOfGuesses > 10) {
+				guessResult.innerHTML = "You should be able to do better!";
+				guessInput.disabled = true;
+			}
+		}
+	</script>
+</body>
+</html>

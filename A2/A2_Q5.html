@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title> Question 5 </title>
+
+    </head>
+
+
+
+    <!-- body -->
+
+    <body>
+
+
+        <h1>Multiple Checker</h1>
+
+
+        <div>
+
+            <input type="text" id="numb1" placeholder="First integer">
+            <input type="text" id="numb2" placeholder="Second integer">
+            <button onclick="checkMultiple()">Check</button>
+
+        </div>
+
+
+        <div>
+            <p id="result"></p>
+        </div>
+
+        <!-----------------------------------  script-------------------------->
+        <script>
+            function checkMultiple() {
+                try {
+                    let numb1 = parseInt(document.getElementById("numb1").value);
+                    let numb2 = parseInt(document.getElementById("numb2").value);
+                    if (isNaN(numb1)) {
+
+                        alert("First integer is not a number. ");
+
+                        return;
+
+                    }
+
+                    if (isNaN(numb2)) {
+
+                        alert("Second integer is not a number. ");
+                        return;
+                    }
+                    let result = document.getElementById("result");
+                    if (numb2 == 0) {
+                        result.innerHTML = "The second integer cannot be zero.";
+                    }
+                    else if (numb1 % numb2 == 0) {
+                        result.innerHTML = `${numb1} is a multiple of ${numb2}.`;
+                    }
+                    else {
+                        result.innerHTML = `${numb1} is not a multiple of ${numb2}.`;
+                    }
+                } catch (error) {
+                    let result = document.getElementById("result");
+                    result.innerHTML = error;
+
+                    alert(result.innerHTML);
+                }
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

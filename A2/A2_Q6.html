@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>question 6</title>
+    </head>
+
+    <body>
+
+        <div>
+
+            <h1>Palindrome</h1>
+            <input type="text" id="input" />
+            <button id="button">Check</button>
+            <p id="result"></p>
+        </div>
+
+
+        <!-----------------------------------  script-------------------------->
+        <script>
+            const input = document.getElementById("input");
+            const button = document.getElementById("button");
+            const result = document.getElementById("result");
+
+            button.addEventListener("click", () => {
+                const number = input.value;
+                if (number.length !== 5 || number[0] === "0") {
+                    alert("Please enter a 5 digit integer that does not start with zero.");
+                    input.value = "";
+                } else {
+                    const reverNumb = number.split("").reverse().join("");
+                    if (number === reverNumb) {
+                        result.innerHTML = `${number} is a palindrome.`;
+                    } else {
+                        result.innerHTML = `${number} is not a palindrome.`;
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>

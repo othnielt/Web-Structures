@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question2 </title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Guess the Number Game</h1>
+	<p>Guess a number between 1 and 1000:</p>
+	<input type="number" id="guessInput">
+	<button onclick="check()">Submit Guess</button>
+	<p id="guessResult"></p>
+
+	<script>
+		let randomNumber = Math.floor(Math.random() * 1000) + 1;
+
+		function check() {
+			let guess = parseInt(document.getElementById("guessInput").value);
+			let result = document.getElementById("guessResult");
+
+			if (isNaN(guess) || guess < 1 || guess > 1000) {
+				result.innerHTML = "Please enter a valid number between 1 and 1000.";
+			} else if (guess < randomNumber) {
+				result.innerHTML = "Too low. Try again.";
+			} else if (guess > randomNumber) {
+				result.innerHTML = "Too high. Try again.";
+			} else {
+				result.innerHTML = "Congratulations. You guessed the number";
+			}
+		}
+	</script>
+</body>
+</html>
